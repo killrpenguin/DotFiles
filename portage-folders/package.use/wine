@@ -1,0 +1,33 @@
+app-emulation/wine-proton osmesa sdl xcomposite usb
+# required by app-emulation/wine-proton-8.0.4::gentoo[osmesa]
+# required by @selected
+# required by @world (argument)
+>=media-libs/mesa-23.3.1 osmesa
+# required by sys-power/suspend-1.0_p20200924::gentoo[crypt]
+# required by sys-power/suspend (argument)
+>=dev-libs/libgcrypt-1.10.3 static-libs
+# required by sys-power/suspend-1.0_p20200924::gentoo[crypt]
+# required by sys-power/suspend (argument)
+>=dev-libs/libgpg-error-1.47-r1 static-libs
+# required by sys-power/suspend-1.0_p20200924::gentoo[lzo]
+# required by sys-power/suspend (argument)
+>=dev-libs/lzo-2.10 static-libs
+# required by media-gfx/imagemagick-7.1.1.25::gentoo[heif]
+# required by @selected
+# required by @world (argument)
+>=media-libs/libheif-1.15.2 x265
+# required by media-gfx/graphviz-9.0.0::gentoo
+# required by media-gfx/imagemagick-7.1.1.25::gentoo[graphviz]
+# required by @selected
+# required by @world (argument)
+>=media-libs/gd-2.3.3-r4 fontconfig
+# required by sys-kernel/installkernel-14-r1::gentoo[systemd]
+# required by sys-apps/debianutils-5.14::gentoo[installkernel]
+# required by app-misc/ca-certificates-20230311.3.96.1::gentoo
+# required by gnome-base/gnome-keyring-42.1-r2::gentoo
+# required by virtual/secret-service-0::gentoo
+# required by app-crypt/libsecret-0.21.1::gentoo
+# required by app-editors/vscode-1.85.1::gentoo
+# required by @selected
+# required by @world (argument)
+>=sys-apps/systemd-255.2-r1 kernel-install

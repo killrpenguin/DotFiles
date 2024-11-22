@@ -1,0 +1,2 @@
+dev-lang/python ensurepip examples sqlite ssl readline
+*/* PYTHON_TARGETS: python3_12

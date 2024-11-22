@@ -1,0 +1,1 @@
+dev-lang/rust rustfmt rust-analyzer clippy doc rust-src miri nightly debug lto

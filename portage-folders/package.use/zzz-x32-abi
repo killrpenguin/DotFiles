@@ -1,0 +1,112 @@
+net-libs/nghttp2 abi_x86_32
+net-dns/c-ares abi_x86_32
+net-misc/curl abi_x86_32
+net-libs/libpsl abi_x86_32
+dev-libs/openssl abi_x86_32
+dev-libs/expat abi_x86_32
+# required by dev-debug/gdb-14.2::gentoo[debuginfod]
+# required by @selected
+# required by @world (argument)
+>=dev-libs/elfutils-0.191 debuginfod
+# required by sys-apps/systemd-255.4::gentoo[lzma]
+# required by sys-kernel/dracut-060_pre20240104-r4::gentoo
+# required by sys-kernel/installkernel-33::gentoo[dracut]
+# required by @selected
+# required by @world (argument)
+>=app-arch/xz-utils-5.6.1 abi_x86_32
+# required by games-util/steam-launcher-1.0.0.79::steam-overlay
+# required by @selected
+# required by @world (argument)
+>=sys-libs/libudev-compat-186-r1 abi_x86_32
+# required by games-util/steam-launcher-1.0.0.79::steam-overlay[pulseaudio]
+# required by @selected
+# required by @world (argument)
+>=media-libs/libpulse-17.0 abi_x86_32
+# required by media-libs/libpulse-17.0::gentoo
+# required by games-util/steam-launcher-1.0.0.79::steam-overlay[pulseaudio]
+# required by @selected
+# required by @world (argument)
+>=media-libs/libsndfile-1.2.2-r2 abi_x86_32
+# required by media-libs/libpulse-17.0::gentoo[asyncns]
+# required by games-util/steam-launcher-1.0.0.79::steam-overlay[pulseaudio]
+# required by @selected
+# required by @world (argument)
+>=net-libs/libasyncns-0.8-r4 abi_x86_32
+# required by media-libs/libsndfile-1.2.2-r2::gentoo[-minimal]
+# required by media-libs/libpulse-17.0::gentoo
+# required by games-util/steam-launcher-1.0.0.79::steam-overlay[pulseaudio]
+# required by @selected
+# required by @world (argument)
+>=media-libs/opus-1.5.1-r1 abi_x86_32
+# required by media-libs/libsndfile-1.2.2-r2::gentoo[-minimal]
+# required by media-libs/libpulse-17.0::gentoo
+# required by games-util/steam-launcher-1.0.0.79::steam-overlay[pulseaudio]
+# required by @selected
+# required by @world (argument)
+>=media-sound/lame-3.100-r3 abi_x86_32
+# required by media-libs/libsndfile-1.2.2-r2::gentoo[-minimal]
+# required by media-libs/libpulse-17.0::gentoo
+# required by games-util/steam-launcher-1.0.0.79::steam-overlay[pulseaudio]
+# required by @selected
+# required by @world (argument)
+>=media-sound/mpg123-base-1.32.3 abi_x86_32
+# required by net-misc/curl-8.9.1::gentoo[http3]
+# required by www-client/google-chrome-127.0.6533.88::gentoo
+# required by @selected
+# required by @world (argument)
+>=net-libs/nghttp3-1.4.0 abi_x86_32
+# required by dev-qt/qtwayland-6.7.2-r3::gentoo
+# required by x11-misc/copyq-7.1.0-r1::gentoo[qt6]
+# required by @selected
+# required by @world (argument)
+>=dev-qt/qtbase-6.7.2-r4 wayland
+# required by dev-qt/qtbase-6.7.2-r4::gentoo[widgets,gui,gtk]
+# required by app-text/poppler-24.08.0::gentoo[qt6]
+# required by @selected
+# required by @world (argument)
+>=x11-libs/gtk+-3.24.42-r1 wayland
+# required by x11-libs/gtk+-3.24.42-r1::gentoo[wayland]
+# required by dev-qt/qtbase-6.7.2-r4::gentoo[widgets,gui,gtk]
+# required by app-text/poppler-24.08.0::gentoo[qt6]
+# required by @selected
+# required by @world (argument)
+>=media-libs/mesa-24.2.1 wayland
+# required by media-libs/vulkan-loader-1.3.290.0::gentoo[layers]
+# required by media-libs/libsdl2-2.30.7-r1::gentoo[vulkan]
+# required by media-libs/sdl2-ttf-2.22.0::gentoo
+# required by @selected
+# required by @world (argument)
+>=media-libs/vulkan-layers-1.3.290.0 abi_x86_32
+# required by dev-util/glslang-1.3.290.0::gentoo
+# required by media-libs/vulkan-layers-1.3.290.0::gentoo
+# required by media-libs/vulkan-loader-1.3.290.0::gentoo[layers]
+# required by media-libs/libsdl2-2.30.7-r1::gentoo[vulkan]
+# required by media-libs/sdl2-ttf-2.22.0::gentoo
+# required by @selected
+# required by @world (argument)
+>=dev-util/spirv-tools-1.3.290.0 abi_x86_32
+# required by media-libs/vulkan-layers-1.3.290.0::gentoo
+# required by media-libs/vulkan-loader-1.3.290.0::gentoo[layers]
+# required by media-libs/libsdl2-2.30.7-r1::gentoo[vulkan]
+# required by media-libs/sdl2-ttf-2.22.0::gentoo
+# required by @selected
+# required by @world (argument)
+>=dev-util/glslang-1.3.290.0 abi_x86_32
+# required by media-libs/vulkan-layers-1.3.290.0::gentoo
+# required by media-libs/vulkan-loader-1.3.290.0::gentoo[layers]
+# required by media-libs/libsdl2-2.30.7-r1::gentoo[vulkan]
+# required by media-libs/sdl2-ttf-2.22.0::gentoo
+# required by @selected
+# required by @world (argument)
+>=dev-util/vulkan-utility-libraries-1.3.290.0 abi_x86_32
+# required by dev-util/bash-language-server-5.4.2::guru
+# required by @selected
+# required by @world (argument)
+>=net-libs/nodejs-22.8.0 npm
+# required by dev-libs/elfutils-0.192-r1::gentoo[debuginfod]
+# required by virtual/libelf-3-r1::gentoo
+# required by dev-libs/glib-2.78.6::gentoo
+# required by www-client/google-chrome-130.0.6723.91::gentoo
+# required by @selected
+# required by @world (argument)
+>=dev-libs/json-c-0.18 abi_x86_32
