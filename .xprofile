@@ -1,0 +1,3 @@
+picom -b &
+bash /home/david/bin/toggle_touchpad.sh &
+copyq --start-server hide
