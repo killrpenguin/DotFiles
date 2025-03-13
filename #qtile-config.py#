@@ -25,7 +25,7 @@ keys = [
     Key([mod, "control"], "1", lazy.to_screen(0), desc="Switch to laptop display."),
     Key([mod, "control"], "2", lazy.to_screen(1), desc="Switch to laptop display."),
     Key([mod, "control"], "n", lazy.next_screen(), desc="Toggle next screen."),
-#    Key([mod, "control"], ",", lazy.previous_screen(), desc="Switch to laptop display."),
+
     
     Key(["shift", "control"], "c", lazy.spawn("copyq copy"), desc="Use copyq to copy text to clipboard"),
     Key(["shift", "control"], "v", lazy.spawn("copyq paste"), desc="Use copyq to paste text from buffer"),
@@ -42,6 +42,7 @@ keys = [
     KeyChord([mod], "p", [
         Key([], "e", lazy.spawn("emacsclient -a '' -c"), desc="Launch Emacsclient if no server is running and with debug init mode."),
         Key([], "g", lazy.spawn("google-chrome-stable"), desc="Launch Google Chrome."),
+        Key([], "n", lazy.spawn("nvim -o 1"), desc="Launch Neovim"),
         Key([], "p", lazy.spawn("pycharm-community"), desc="Launch Pycharm IDE."),
         Key([], "q", lazy.spawn("copyq show"), desc="Display clipboard manager"),
         Key([], "s", lazy.spawn("steam"), desc="Launch Steam Games."),
@@ -54,7 +55,6 @@ keys = [
     KeyChord([mod], "s", [
         Key([], "p", lazy.spawn("poweroff"), desc="Turn pc off."),
         Key([], "r", lazy.spawn("reboot"), desc="Turn pc off."),
-        Key([], "s", lazy.spawn("flameshot gui"), desc="Turn pc off."),
 
         Key([], "t", lazy.spawn("bash /home/david/bin/touchscreen_toggle.sh"), desc="Toggle touchscreen."),
         Key([], "m", lazy.spawn("bash /home/david/bin/toggle_touchpad.sh"), desc="Toggle touchpad."),
@@ -136,7 +136,7 @@ screens = [
         widget.Prompt(),
         widget.WindowName(),
         widget.Chord(
-            fontsize="13",
+            fontsize="15",
             foreground=color_list[3],
             name_transform=lambda name: name,
             ),
@@ -167,6 +167,12 @@ screens = [
             name_transform=lambda name: name,
             ),
         
+        widget.Systray(),
+	widget.Net(fontsize=14, padding=10),
+	widget.TextBox("CPU -> ", foreground="#18BAEB", fontsize=14),
+	widget.CPUGraph(),
+	widget.TextBox("RAM -> ", foreground="#18BAEB", fontsize=14),
+	widget.MemoryGraph(),
 	widget.Clock(format="%m-%d-%y", padding=10, fontsize=14),
         widget.BatteryIcon(),
 	widget.Clock(format="%I:%M %p", padding=10, fontsize=14),
