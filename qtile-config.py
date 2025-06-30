@@ -26,7 +26,7 @@ keys = [
     Key([mod, "control"], "2", lazy.to_screen(1), desc="Switch to laptop display."),
     Key([mod, "control"], "n", lazy.next_screen(), desc="Toggle next screen."),
 #    Key([mod, "control"], ",", lazy.previous_screen(), desc="Switch to laptop display."),
-    
+
     Key(["shift", "control"], "c", lazy.spawn("copyq copy"), desc="Use copyq to copy text to clipboard"),
     Key(["shift", "control"], "v", lazy.spawn("copyq paste"), desc="Use copyq to paste text from buffer"),
     Key([mod, "control"], "x", lazy.shutdown(), desc="Shutdown Qtile"),
@@ -47,7 +47,9 @@ keys = [
         Key([], "s", lazy.spawn("steam"), desc="Launch Steam Games."),
         Key([], "t", lazy.spawn("thunar"), desc="Launch Thunar File Manager."),
         Key([], "m", lazy.spawn("vlc"), desc="Launch Vlc media player."),
-        Key([], "v", lazy.spawn("vscode"), desc="Launch M$ VsCode."),],
+        Key([], "v", lazy.spawn("vscode"), desc="Launch M$ VsCode."),
+        Key([], "r", lazy.spawn("rustrover"), desc="Launch RustRover."),
+        Key([], "z", lazy.spawn("bin/zed/libexec/zed-editor"), desc="Launch Zed."),],
              name="Programs",
              ),
 #System Keychords:
