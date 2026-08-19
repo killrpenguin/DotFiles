@@ -1,0 +1,135 @@
+# Main Setting
+set $mod Mod4
+set $Alt Mod1
+
+font pango:DejaVu Sans Mono 8
+
+# Configure borders
+default_border pixel 0
+default_floating_border pixel 0
+for_window [class="^.*"] border pixel 2 
+
+# Start XDG autostart .desktop files using dex.
+exec --no-startup-id dex --autostart --environment i3
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+r restart
+
+# workspace basics from default config
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws9 "9"
+set $ws0 "0"
+
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# Quick focus
+bindsym $mod+Tab focus next
+bindsym $Alt+Tab focus prev
+
+bindsym Control+$mod+b focus left
+bindsym Control+$mod+n focus down
+bindsym Control+$mod+f focus right
+bindsym Control+$mod+p focus up
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+#launch terminal
+bindsym $mod+Return exec kitty
+
+# kill focus window
+bindsym $mod+q kill
+
+# focus the parent container
+bindsym $mod+Shift+a focus parent
+
+# Default to floating window for specific apps
+for_window [class="floating-win"] floating enable
+
+# Launch polybar
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+
+# Set backgrounds
+exec_always --no-startup-id feh --randomize --bg-fill /home/david/Pictures/wallpapers/* /home/david/Pictures/wallpapers/*
+
+# Program keychords
+mode "Programs" {
+	bindsym e exec --no-startup-id emacsclient -a '' -c; mode "default"
+        bindsym g exec --no-startup-id google-chrome-stable; mode "default"
+	bindsym q exec copyq show; mode "default"
+	bindsym s exec --no-startup-id steam --class floating-win; mode "default"
+	bindsym t exec thunar --class floating-win; mode "default"
+	bindsym m exec vlc; mode "default"
+	bindsym r exec --no-startup-id rustrover; mode "default"
+	bindsym v vscode; mode "default"
+
+	bindsym Escape mode "default"
+}
+
+bindsym $mod+p mode "Programs"
+
+# System control keychords
+mode "System" {
+	# Power controls
+	bindsym p exec systemctl poweroff; mode "default"
+	bindsym r exec systemctl reboot; mode "default"
+	bindsym k exec systemctl reboot --force; mode "default"
+	bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+	# Volume controls
+	bindsym $mod+p exec amixer -c Generic_1 -q set Master 2dB+
+	bindsym $mod+n exec amixer -c Generic_1 -q set Master 2dB-
+
+	# Disable ancillaries = fix touchscreen script
+	bindsym $mod+t exec --no-startup-id bash /home/david/bin/toggle_touchscreen.sh; mode "default"
+	bindsym $mod+m exec --no-startup-id bash /home/david/bin/toggle_touchpad.sh; mode "default"
+
+	#brightness controls
+	bindsym $mod+j exec --no-startup-id brightnessctl set +5%
+	bindsym $mod+k exec --no-startup-id brightnessctl set 5%-
+
+	bindsym Escape mode "default"
+}
+
+bindsym $mod+s mode "System"
+
+# Window managment keychords
+mode "Resize_Window" {
+	bindsym f fullscreen toggle
+
+        bindsym Control+f resize shrink width 1 px or 1 ppt
+        bindsym Control+b resize grow width 1 px or 1 ppt 
+        bindsym Control+p resize grow height 1 px or 1 ppt
+        bindsym Control+n resize shrink height 1 px or 1 ppt
+
+	bindsym $Alt+b move left
+	bindsym $Alt+n move down
+	bindsym $Alt+p move up
+	bindsym $Alt+f move right
+
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+w mode "Resize_Window"
